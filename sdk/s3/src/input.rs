@@ -4854,7 +4854,7 @@ impl HeadObjectInput {
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::HeadObject, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+    async fn _make_presigned_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::HeadObject, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
         let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
         .set_use_fips(_config.use_fips)
         .set_use_dual_stack(_config.use_dual_stack)
@@ -4886,6 +4886,138 @@ impl HeadObjectInput {
                 if let Some(inner_49) = &_input.version_id {
                      {
                         query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_49));
+                    }
+                }
+                if _input.part_number != 0 {
+                    query.push_kv("partNumber", aws_smithy_types::primitive::Encoder::from(_input.part_number).encode());
+                }
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                            input: &crate::input::HeadObjectInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                uri_query(input, &mut uri)?;
+                let builder = crate::protocol_serde::shape_head_object::ser_head_object_headers(input, builder)?;
+                Ok(builder.method("HEAD").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request.properties_mut().insert(endpoint_result);
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        signing_config.signing_options.content_sha256_header = true;
+        signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
+        request.properties_mut().insert(signing_config);
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
+        if let Some(region) = &_config.region {
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::HeadObject::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("HeadObject", "s3"));
+        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
+        Ok(op)
+    }
+    /// 
+    /// Creates a presigned request for this operation.
+    /// 
+    /// The credentials provider from the `config` will be used to generate the request's signature.
+    /// The `presigning_config` provides additional presigning-specific config values, such as the
+    /// amount of time the request should be valid for after creation.
+    /// 
+    /// Presigned requests can be given to other users or applications to access a resource or perform
+    /// an operation without having access to the AWS security credentials.
+    /// 
+    pub async fn presigned(
+                    self,
+                    config: &crate::config::Config,
+                    presigning_config: crate::presigning::config::PresigningConfig
+                ) -> Result<crate::presigning::request::PresignedRequest, aws_smithy_http::result::SdkError<crate::error::HeadObjectError>> {
+        let (mut request, _) = self._make_presigned_operation(config)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .into_request_response();
+         {
+            // Change signature type to query params and wire up presigning config
+                                let mut props = request.properties_mut();
+                                props.insert(presigning_config.start_time());
+            props.insert(
+                aws_sigv4::http_request::SignableBody::UnsignedPayload
+            );
+            let mut config = props.get_mut::<aws_sig_auth::signer::OperationSigningConfig>()
+                                    .expect("signing config added by make_operation()");
+                                config.signature_type = aws_sig_auth::signer::HttpSignatureType::HttpRequestQueryParams;
+                                config.expires_in = Some(presigning_config.expires());
+        }
+        let middleware = crate::middleware::DefaultMiddleware::default();
+                        let mut svc = tower::builder::ServiceBuilder::new()
+                            .layer(&middleware)
+                            .service(crate::presigning::service::PresignedRequestService::new());
+        
+                        use tower::{Service, ServiceExt};
+                        Ok(svc.ready().await?.call(request).await?)
+    }
+    /// Consumes the builder and constructs an Operation<[`HeadObject`](crate::operation::HeadObject)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::HeadObject, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_fips(_config.use_fips)
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_endpoint(_config.endpoint_url
+        .clone())
+        .set_force_path_style(_config.force_path_style)
+        .set_use_arn_region(_config.use_arn_region)
+        .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
+        .set_accelerate(_config.accelerate)
+        .set_bucket(self.bucket.clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
+        let mut request = {
+            fn uri_base(_input: &crate::input::HeadObjectInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                let input_50 = &_input.key;
+                let input_50 = input_50.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("key", "cannot be empty or unset"))?;
+                let key = aws_smithy_http::label::fmt_string(input_50, aws_smithy_http::label::EncodingStrategy::Greedy);
+                if key.is_empty() {
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("key", "cannot be empty or unset"))
+                            }
+                write!(output, "/{Key}", Key = key).expect("formatting should succeed");
+                Ok(())
+            }
+            fn uri_query(_input: &crate::input::HeadObjectInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+                let mut query = aws_smithy_http::query::Writer::new(&mut output);
+                if let Some(inner_51) = &_input.version_id {
+                     {
+                        query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_51));
                     }
                 }
                 if _input.part_number != 0 {
@@ -4975,9 +5107,9 @@ impl ListBucketAnalyticsConfigurationsInput {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("analytics");
                 query.push_kv("x-id", "ListBucketAnalyticsConfigurations");
-                if let Some(inner_50) = &_input.continuation_token {
+                if let Some(inner_52) = &_input.continuation_token {
                      {
-                        query.push_kv("continuation-token", &aws_smithy_http::query::fmt_string(&inner_50));
+                        query.push_kv("continuation-token", &aws_smithy_http::query::fmt_string(&inner_52));
                     }
                 }
                 Ok(())
@@ -5064,9 +5196,9 @@ impl ListBucketIntelligentTieringConfigurationsInput {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("intelligent-tiering");
                 query.push_kv("x-id", "ListBucketIntelligentTieringConfigurations");
-                if let Some(inner_51) = &_input.continuation_token {
+                if let Some(inner_53) = &_input.continuation_token {
                      {
-                        query.push_kv("continuation-token", &aws_smithy_http::query::fmt_string(&inner_51));
+                        query.push_kv("continuation-token", &aws_smithy_http::query::fmt_string(&inner_53));
                     }
                 }
                 Ok(())
@@ -5152,9 +5284,9 @@ impl ListBucketInventoryConfigurationsInput {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("inventory");
                 query.push_kv("x-id", "ListBucketInventoryConfigurations");
-                if let Some(inner_52) = &_input.continuation_token {
+                if let Some(inner_54) = &_input.continuation_token {
                      {
-                        query.push_kv("continuation-token", &aws_smithy_http::query::fmt_string(&inner_52));
+                        query.push_kv("continuation-token", &aws_smithy_http::query::fmt_string(&inner_54));
                     }
                 }
                 Ok(())
@@ -5241,9 +5373,9 @@ impl ListBucketMetricsConfigurationsInput {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("metrics");
                 query.push_kv("x-id", "ListBucketMetricsConfigurations");
-                if let Some(inner_53) = &_input.continuation_token {
+                if let Some(inner_55) = &_input.continuation_token {
                      {
-                        query.push_kv("continuation-token", &aws_smithy_http::query::fmt_string(&inner_53));
+                        query.push_kv("continuation-token", &aws_smithy_http::query::fmt_string(&inner_55));
                     }
                 }
                 Ok(())
@@ -5404,32 +5536,32 @@ impl ListMultipartUploadsInput {
             fn uri_query(_input: &crate::input::ListMultipartUploadsInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("uploads");
-                if let Some(inner_54) = &_input.delimiter {
+                if let Some(inner_56) = &_input.delimiter {
                      {
-                        query.push_kv("delimiter", &aws_smithy_http::query::fmt_string(&inner_54));
+                        query.push_kv("delimiter", &aws_smithy_http::query::fmt_string(&inner_56));
                     }
                 }
-                if let Some(inner_55) = &_input.encoding_type {
+                if let Some(inner_57) = &_input.encoding_type {
                      {
-                        query.push_kv("encoding-type", &aws_smithy_http::query::fmt_string(&inner_55));
+                        query.push_kv("encoding-type", &aws_smithy_http::query::fmt_string(&inner_57));
                     }
                 }
-                if let Some(inner_56) = &_input.key_marker {
+                if let Some(inner_58) = &_input.key_marker {
                      {
-                        query.push_kv("key-marker", &aws_smithy_http::query::fmt_string(&inner_56));
+                        query.push_kv("key-marker", &aws_smithy_http::query::fmt_string(&inner_58));
                     }
                 }
                 if _input.max_uploads != 0 {
                     query.push_kv("max-uploads", aws_smithy_types::primitive::Encoder::from(_input.max_uploads).encode());
                 }
-                if let Some(inner_57) = &_input.prefix {
+                if let Some(inner_59) = &_input.prefix {
                      {
-                        query.push_kv("prefix", &aws_smithy_http::query::fmt_string(&inner_57));
+                        query.push_kv("prefix", &aws_smithy_http::query::fmt_string(&inner_59));
                     }
                 }
-                if let Some(inner_58) = &_input.upload_id_marker {
+                if let Some(inner_60) = &_input.upload_id_marker {
                      {
-                        query.push_kv("upload-id-marker", &aws_smithy_http::query::fmt_string(&inner_58));
+                        query.push_kv("upload-id-marker", &aws_smithy_http::query::fmt_string(&inner_60));
                     }
                 }
                 Ok(())
@@ -5514,27 +5646,27 @@ impl ListObjectsInput {
             }
             fn uri_query(_input: &crate::input::ListObjectsInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_59) = &_input.delimiter {
+                if let Some(inner_61) = &_input.delimiter {
                      {
-                        query.push_kv("delimiter", &aws_smithy_http::query::fmt_string(&inner_59));
+                        query.push_kv("delimiter", &aws_smithy_http::query::fmt_string(&inner_61));
                     }
                 }
-                if let Some(inner_60) = &_input.encoding_type {
+                if let Some(inner_62) = &_input.encoding_type {
                      {
-                        query.push_kv("encoding-type", &aws_smithy_http::query::fmt_string(&inner_60));
+                        query.push_kv("encoding-type", &aws_smithy_http::query::fmt_string(&inner_62));
                     }
                 }
-                if let Some(inner_61) = &_input.marker {
+                if let Some(inner_63) = &_input.marker {
                      {
-                        query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_61));
+                        query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_63));
                     }
                 }
                 if _input.max_keys != 0 {
                     query.push_kv("max-keys", aws_smithy_types::primitive::Encoder::from(_input.max_keys).encode());
                 }
-                if let Some(inner_62) = &_input.prefix {
+                if let Some(inner_64) = &_input.prefix {
                      {
-                        query.push_kv("prefix", &aws_smithy_http::query::fmt_string(&inner_62));
+                        query.push_kv("prefix", &aws_smithy_http::query::fmt_string(&inner_64));
                     }
                 }
                 Ok(())
@@ -5620,35 +5752,35 @@ impl ListObjectsV2Input {
             fn uri_query(_input: &crate::input::ListObjectsV2Input, mut output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_kv("list-type", "2");
-                if let Some(inner_63) = &_input.delimiter {
+                if let Some(inner_65) = &_input.delimiter {
                      {
-                        query.push_kv("delimiter", &aws_smithy_http::query::fmt_string(&inner_63));
+                        query.push_kv("delimiter", &aws_smithy_http::query::fmt_string(&inner_65));
                     }
                 }
-                if let Some(inner_64) = &_input.encoding_type {
+                if let Some(inner_66) = &_input.encoding_type {
                      {
-                        query.push_kv("encoding-type", &aws_smithy_http::query::fmt_string(&inner_64));
+                        query.push_kv("encoding-type", &aws_smithy_http::query::fmt_string(&inner_66));
                     }
                 }
                 if _input.max_keys != 0 {
                     query.push_kv("max-keys", aws_smithy_types::primitive::Encoder::from(_input.max_keys).encode());
                 }
-                if let Some(inner_65) = &_input.prefix {
+                if let Some(inner_67) = &_input.prefix {
                      {
-                        query.push_kv("prefix", &aws_smithy_http::query::fmt_string(&inner_65));
+                        query.push_kv("prefix", &aws_smithy_http::query::fmt_string(&inner_67));
                     }
                 }
-                if let Some(inner_66) = &_input.continuation_token {
+                if let Some(inner_68) = &_input.continuation_token {
                      {
-                        query.push_kv("continuation-token", &aws_smithy_http::query::fmt_string(&inner_66));
+                        query.push_kv("continuation-token", &aws_smithy_http::query::fmt_string(&inner_68));
                     }
                 }
                 if _input.fetch_owner {
                     query.push_kv("fetch-owner", aws_smithy_types::primitive::Encoder::from(_input.fetch_owner).encode());
                 }
-                if let Some(inner_67) = &_input.start_after {
+                if let Some(inner_69) = &_input.start_after {
                      {
-                        query.push_kv("start-after", &aws_smithy_http::query::fmt_string(&inner_67));
+                        query.push_kv("start-after", &aws_smithy_http::query::fmt_string(&inner_69));
                     }
                 }
                 Ok(())
@@ -5734,32 +5866,32 @@ impl ListObjectVersionsInput {
             fn uri_query(_input: &crate::input::ListObjectVersionsInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("versions");
-                if let Some(inner_68) = &_input.delimiter {
+                if let Some(inner_70) = &_input.delimiter {
                      {
-                        query.push_kv("delimiter", &aws_smithy_http::query::fmt_string(&inner_68));
+                        query.push_kv("delimiter", &aws_smithy_http::query::fmt_string(&inner_70));
                     }
                 }
-                if let Some(inner_69) = &_input.encoding_type {
+                if let Some(inner_71) = &_input.encoding_type {
                      {
-                        query.push_kv("encoding-type", &aws_smithy_http::query::fmt_string(&inner_69));
+                        query.push_kv("encoding-type", &aws_smithy_http::query::fmt_string(&inner_71));
                     }
                 }
-                if let Some(inner_70) = &_input.key_marker {
+                if let Some(inner_72) = &_input.key_marker {
                      {
-                        query.push_kv("key-marker", &aws_smithy_http::query::fmt_string(&inner_70));
+                        query.push_kv("key-marker", &aws_smithy_http::query::fmt_string(&inner_72));
                     }
                 }
                 if _input.max_keys != 0 {
                     query.push_kv("max-keys", aws_smithy_types::primitive::Encoder::from(_input.max_keys).encode());
                 }
-                if let Some(inner_71) = &_input.prefix {
+                if let Some(inner_73) = &_input.prefix {
                      {
-                        query.push_kv("prefix", &aws_smithy_http::query::fmt_string(&inner_71));
+                        query.push_kv("prefix", &aws_smithy_http::query::fmt_string(&inner_73));
                     }
                 }
-                if let Some(inner_72) = &_input.version_id_marker {
+                if let Some(inner_74) = &_input.version_id_marker {
                      {
-                        query.push_kv("version-id-marker", &aws_smithy_http::query::fmt_string(&inner_72));
+                        query.push_kv("version-id-marker", &aws_smithy_http::query::fmt_string(&inner_74));
                     }
                 }
                 Ok(())
@@ -5839,9 +5971,9 @@ impl ListPartsInput {
                                 };
         let mut request = {
             fn uri_base(_input: &crate::input::ListPartsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_73 = &_input.key;
-                let input_73 = input_73.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("key", "cannot be empty or unset"))?;
-                let key = aws_smithy_http::label::fmt_string(input_73, aws_smithy_http::label::EncodingStrategy::Greedy);
+                let input_75 = &_input.key;
+                let input_75 = input_75.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("key", "cannot be empty or unset"))?;
+                let key = aws_smithy_http::label::fmt_string(input_75, aws_smithy_http::label::EncodingStrategy::Greedy);
                 if key.is_empty() {
                                 return Err(aws_smithy_http::operation::error::BuildError::missing_field("key", "cannot be empty or unset"))
                             }
@@ -5854,17 +5986,17 @@ impl ListPartsInput {
                 if _input.max_parts != 0 {
                     query.push_kv("max-parts", aws_smithy_types::primitive::Encoder::from(_input.max_parts).encode());
                 }
-                if let Some(inner_74) = &_input.part_number_marker {
+                if let Some(inner_76) = &_input.part_number_marker {
                      {
-                        query.push_kv("part-number-marker", &aws_smithy_http::query::fmt_string(&inner_74));
+                        query.push_kv("part-number-marker", &aws_smithy_http::query::fmt_string(&inner_76));
                     }
                 }
-                let inner_75 = &_input.upload_id;
-                let inner_75 = inner_75.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("upload_id", "cannot be empty or unset"))?;
-                if inner_75.is_empty() {
+                let inner_77 = &_input.upload_id;
+                let inner_77 = inner_77.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("upload_id", "cannot be empty or unset"))?;
+                if inner_77.is_empty() {
                     return Err(aws_smithy_http::operation::error::BuildError::missing_field("upload_id", "cannot be empty or unset"));
                 }
-                query.push_kv("uploadId", &aws_smithy_http::query::fmt_string(&inner_75));
+                query.push_kv("uploadId", &aws_smithy_http::query::fmt_string(&inner_77));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -6154,12 +6286,12 @@ impl PutBucketAnalyticsConfigurationInput {
             fn uri_query(_input: &crate::input::PutBucketAnalyticsConfigurationInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("analytics");
-                let inner_76 = &_input.id;
-                let inner_76 = inner_76.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("id", "cannot be empty or unset"))?;
-                if inner_76.is_empty() {
+                let inner_78 = &_input.id;
+                let inner_78 = inner_78.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("id", "cannot be empty or unset"))?;
+                if inner_78.is_empty() {
                     return Err(aws_smithy_http::operation::error::BuildError::missing_field("id", "cannot be empty or unset"));
                 }
-                query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_76));
+                query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_78));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -6453,12 +6585,12 @@ impl PutBucketIntelligentTieringConfigurationInput {
             fn uri_query(_input: &crate::input::PutBucketIntelligentTieringConfigurationInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("intelligent-tiering");
-                let inner_77 = &_input.id;
-                let inner_77 = inner_77.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("id", "cannot be empty or unset"))?;
-                if inner_77.is_empty() {
+                let inner_79 = &_input.id;
+                let inner_79 = inner_79.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("id", "cannot be empty or unset"))?;
+                if inner_79.is_empty() {
                     return Err(aws_smithy_http::operation::error::BuildError::missing_field("id", "cannot be empty or unset"));
                 }
-                query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_77));
+                query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_79));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -6545,12 +6677,12 @@ impl PutBucketInventoryConfigurationInput {
             fn uri_query(_input: &crate::input::PutBucketInventoryConfigurationInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("inventory");
-                let inner_78 = &_input.id;
-                let inner_78 = inner_78.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("id", "cannot be empty or unset"))?;
-                if inner_78.is_empty() {
+                let inner_80 = &_input.id;
+                let inner_80 = inner_80.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("id", "cannot be empty or unset"))?;
+                if inner_80.is_empty() {
                     return Err(aws_smithy_http::operation::error::BuildError::missing_field("id", "cannot be empty or unset"));
                 }
-                query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_78));
+                query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_80));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -6844,12 +6976,12 @@ impl PutBucketMetricsConfigurationInput {
             fn uri_query(_input: &crate::input::PutBucketMetricsConfigurationInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("metrics");
-                let inner_79 = &_input.id;
-                let inner_79 = inner_79.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("id", "cannot be empty or unset"))?;
-                if inner_79.is_empty() {
+                let inner_81 = &_input.id;
+                let inner_81 = inner_81.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("id", "cannot be empty or unset"))?;
+                if inner_81.is_empty() {
                     return Err(aws_smithy_http::operation::error::BuildError::missing_field("id", "cannot be empty or unset"));
                 }
-                query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_79));
+                query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_81));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -7738,9 +7870,9 @@ impl PutObjectInput {
         let checksum_algorithm = self.checksum_algorithm().cloned();
         let mut request = {
             fn uri_base(_input: &crate::input::PutObjectInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_80 = &_input.key;
-                let input_80 = input_80.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("key", "cannot be empty or unset"))?;
-                let key = aws_smithy_http::label::fmt_string(input_80, aws_smithy_http::label::EncodingStrategy::Greedy);
+                let input_82 = &_input.key;
+                let input_82 = input_82.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("key", "cannot be empty or unset"))?;
+                let key = aws_smithy_http::label::fmt_string(input_82, aws_smithy_http::label::EncodingStrategy::Greedy);
                 if key.is_empty() {
                                 return Err(aws_smithy_http::operation::error::BuildError::missing_field("key", "cannot be empty or unset"))
                             }
@@ -7880,9 +8012,9 @@ impl PutObjectInput {
         let checksum_algorithm = self.checksum_algorithm().cloned();
         let mut request = {
             fn uri_base(_input: &crate::input::PutObjectInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_81 = &_input.key;
-                let input_81 = input_81.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("key", "cannot be empty or unset"))?;
-                let key = aws_smithy_http::label::fmt_string(input_81, aws_smithy_http::label::EncodingStrategy::Greedy);
+                let input_83 = &_input.key;
+                let input_83 = input_83.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("key", "cannot be empty or unset"))?;
+                let key = aws_smithy_http::label::fmt_string(input_83, aws_smithy_http::label::EncodingStrategy::Greedy);
                 if key.is_empty() {
                                 return Err(aws_smithy_http::operation::error::BuildError::missing_field("key", "cannot be empty or unset"))
                             }
@@ -7990,9 +8122,9 @@ impl PutObjectAclInput {
         let checksum_algorithm = self.checksum_algorithm().cloned();
         let mut request = {
             fn uri_base(_input: &crate::input::PutObjectAclInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_82 = &_input.key;
-                let input_82 = input_82.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("key", "cannot be empty or unset"))?;
-                let key = aws_smithy_http::label::fmt_string(input_82, aws_smithy_http::label::EncodingStrategy::Greedy);
+                let input_84 = &_input.key;
+                let input_84 = input_84.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("key", "cannot be empty or unset"))?;
+                let key = aws_smithy_http::label::fmt_string(input_84, aws_smithy_http::label::EncodingStrategy::Greedy);
                 if key.is_empty() {
                                 return Err(aws_smithy_http::operation::error::BuildError::missing_field("key", "cannot be empty or unset"))
                             }
@@ -8002,9 +8134,9 @@ impl PutObjectAclInput {
             fn uri_query(_input: &crate::input::PutObjectAclInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("acl");
-                if let Some(inner_83) = &_input.version_id {
+                if let Some(inner_85) = &_input.version_id {
                      {
-                        query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_83));
+                        query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_85));
                     }
                 }
                 Ok(())
@@ -8104,9 +8236,9 @@ impl PutObjectLegalHoldInput {
         let checksum_algorithm = self.checksum_algorithm().cloned();
         let mut request = {
             fn uri_base(_input: &crate::input::PutObjectLegalHoldInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_84 = &_input.key;
-                let input_84 = input_84.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("key", "cannot be empty or unset"))?;
-                let key = aws_smithy_http::label::fmt_string(input_84, aws_smithy_http::label::EncodingStrategy::Greedy);
+                let input_86 = &_input.key;
+                let input_86 = input_86.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("key", "cannot be empty or unset"))?;
+                let key = aws_smithy_http::label::fmt_string(input_86, aws_smithy_http::label::EncodingStrategy::Greedy);
                 if key.is_empty() {
                                 return Err(aws_smithy_http::operation::error::BuildError::missing_field("key", "cannot be empty or unset"))
                             }
@@ -8116,9 +8248,9 @@ impl PutObjectLegalHoldInput {
             fn uri_query(_input: &crate::input::PutObjectLegalHoldInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("legal-hold");
-                if let Some(inner_85) = &_input.version_id {
+                if let Some(inner_87) = &_input.version_id {
                      {
-                        query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_85));
+                        query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_87));
                     }
                 }
                 Ok(())
@@ -8321,9 +8453,9 @@ impl PutObjectRetentionInput {
         let checksum_algorithm = self.checksum_algorithm().cloned();
         let mut request = {
             fn uri_base(_input: &crate::input::PutObjectRetentionInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_86 = &_input.key;
-                let input_86 = input_86.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("key", "cannot be empty or unset"))?;
-                let key = aws_smithy_http::label::fmt_string(input_86, aws_smithy_http::label::EncodingStrategy::Greedy);
+                let input_88 = &_input.key;
+                let input_88 = input_88.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("key", "cannot be empty or unset"))?;
+                let key = aws_smithy_http::label::fmt_string(input_88, aws_smithy_http::label::EncodingStrategy::Greedy);
                 if key.is_empty() {
                                 return Err(aws_smithy_http::operation::error::BuildError::missing_field("key", "cannot be empty or unset"))
                             }
@@ -8333,9 +8465,9 @@ impl PutObjectRetentionInput {
             fn uri_query(_input: &crate::input::PutObjectRetentionInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("retention");
-                if let Some(inner_87) = &_input.version_id {
+                if let Some(inner_89) = &_input.version_id {
                      {
-                        query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_87));
+                        query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_89));
                     }
                 }
                 Ok(())
@@ -8435,9 +8567,9 @@ impl PutObjectTaggingInput {
         let checksum_algorithm = self.checksum_algorithm().cloned();
         let mut request = {
             fn uri_base(_input: &crate::input::PutObjectTaggingInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_88 = &_input.key;
-                let input_88 = input_88.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("key", "cannot be empty or unset"))?;
-                let key = aws_smithy_http::label::fmt_string(input_88, aws_smithy_http::label::EncodingStrategy::Greedy);
+                let input_90 = &_input.key;
+                let input_90 = input_90.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("key", "cannot be empty or unset"))?;
+                let key = aws_smithy_http::label::fmt_string(input_90, aws_smithy_http::label::EncodingStrategy::Greedy);
                 if key.is_empty() {
                                 return Err(aws_smithy_http::operation::error::BuildError::missing_field("key", "cannot be empty or unset"))
                             }
@@ -8447,9 +8579,9 @@ impl PutObjectTaggingInput {
             fn uri_query(_input: &crate::input::PutObjectTaggingInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("tagging");
-                if let Some(inner_89) = &_input.version_id {
+                if let Some(inner_91) = &_input.version_id {
                      {
-                        query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_89));
+                        query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_91));
                     }
                 }
                 Ok(())
@@ -8652,9 +8784,9 @@ impl RestoreObjectInput {
         let checksum_algorithm = self.checksum_algorithm().cloned();
         let mut request = {
             fn uri_base(_input: &crate::input::RestoreObjectInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_90 = &_input.key;
-                let input_90 = input_90.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("key", "cannot be empty or unset"))?;
-                let key = aws_smithy_http::label::fmt_string(input_90, aws_smithy_http::label::EncodingStrategy::Greedy);
+                let input_92 = &_input.key;
+                let input_92 = input_92.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("key", "cannot be empty or unset"))?;
+                let key = aws_smithy_http::label::fmt_string(input_92, aws_smithy_http::label::EncodingStrategy::Greedy);
                 if key.is_empty() {
                                 return Err(aws_smithy_http::operation::error::BuildError::missing_field("key", "cannot be empty or unset"))
                             }
@@ -8665,9 +8797,9 @@ impl RestoreObjectInput {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("restore");
                 query.push_kv("x-id", "RestoreObject");
-                if let Some(inner_91) = &_input.version_id {
+                if let Some(inner_93) = &_input.version_id {
                      {
-                        query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_91));
+                        query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_93));
                     }
                 }
                 Ok(())
@@ -8766,9 +8898,9 @@ impl SelectObjectContentInput {
                                 };
         let mut request = {
             fn uri_base(_input: &crate::input::SelectObjectContentInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_92 = &_input.key;
-                let input_92 = input_92.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("key", "cannot be empty or unset"))?;
-                let key = aws_smithy_http::label::fmt_string(input_92, aws_smithy_http::label::EncodingStrategy::Greedy);
+                let input_94 = &_input.key;
+                let input_94 = input_94.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("key", "cannot be empty or unset"))?;
+                let key = aws_smithy_http::label::fmt_string(input_94, aws_smithy_http::label::EncodingStrategy::Greedy);
                 if key.is_empty() {
                                 return Err(aws_smithy_http::operation::error::BuildError::missing_field("key", "cannot be empty or unset"))
                             }
@@ -8862,9 +8994,9 @@ impl UploadPartInput {
         let checksum_algorithm = self.checksum_algorithm().cloned();
         let mut request = {
             fn uri_base(_input: &crate::input::UploadPartInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_93 = &_input.key;
-                let input_93 = input_93.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("key", "cannot be empty or unset"))?;
-                let key = aws_smithy_http::label::fmt_string(input_93, aws_smithy_http::label::EncodingStrategy::Greedy);
+                let input_95 = &_input.key;
+                let input_95 = input_95.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("key", "cannot be empty or unset"))?;
+                let key = aws_smithy_http::label::fmt_string(input_95, aws_smithy_http::label::EncodingStrategy::Greedy);
                 if key.is_empty() {
                                 return Err(aws_smithy_http::operation::error::BuildError::missing_field("key", "cannot be empty or unset"))
                             }
@@ -8874,14 +9006,14 @@ impl UploadPartInput {
             fn uri_query(_input: &crate::input::UploadPartInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_kv("x-id", "UploadPart");
-                let inner_94 = &_input.part_number;
-                query.push_kv("partNumber", aws_smithy_types::primitive::Encoder::from(*inner_94).encode());
-                let inner_95 = &_input.upload_id;
-                let inner_95 = inner_95.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("upload_id", "cannot be empty or unset"))?;
-                if inner_95.is_empty() {
+                let inner_96 = &_input.part_number;
+                query.push_kv("partNumber", aws_smithy_types::primitive::Encoder::from(*inner_96).encode());
+                let inner_97 = &_input.upload_id;
+                let inner_97 = inner_97.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("upload_id", "cannot be empty or unset"))?;
+                if inner_97.is_empty() {
                     return Err(aws_smithy_http::operation::error::BuildError::missing_field("upload_id", "cannot be empty or unset"));
                 }
-                query.push_kv("uploadId", &aws_smithy_http::query::fmt_string(&inner_95));
+                query.push_kv("uploadId", &aws_smithy_http::query::fmt_string(&inner_97));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -9012,9 +9144,9 @@ impl UploadPartInput {
         let checksum_algorithm = self.checksum_algorithm().cloned();
         let mut request = {
             fn uri_base(_input: &crate::input::UploadPartInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_96 = &_input.key;
-                let input_96 = input_96.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("key", "cannot be empty or unset"))?;
-                let key = aws_smithy_http::label::fmt_string(input_96, aws_smithy_http::label::EncodingStrategy::Greedy);
+                let input_98 = &_input.key;
+                let input_98 = input_98.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("key", "cannot be empty or unset"))?;
+                let key = aws_smithy_http::label::fmt_string(input_98, aws_smithy_http::label::EncodingStrategy::Greedy);
                 if key.is_empty() {
                                 return Err(aws_smithy_http::operation::error::BuildError::missing_field("key", "cannot be empty or unset"))
                             }
@@ -9024,14 +9156,14 @@ impl UploadPartInput {
             fn uri_query(_input: &crate::input::UploadPartInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_kv("x-id", "UploadPart");
-                let inner_97 = &_input.part_number;
-                query.push_kv("partNumber", aws_smithy_types::primitive::Encoder::from(*inner_97).encode());
-                let inner_98 = &_input.upload_id;
-                let inner_98 = inner_98.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("upload_id", "cannot be empty or unset"))?;
-                if inner_98.is_empty() {
+                let inner_99 = &_input.part_number;
+                query.push_kv("partNumber", aws_smithy_types::primitive::Encoder::from(*inner_99).encode());
+                let inner_100 = &_input.upload_id;
+                let inner_100 = inner_100.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("upload_id", "cannot be empty or unset"))?;
+                if inner_100.is_empty() {
                     return Err(aws_smithy_http::operation::error::BuildError::missing_field("upload_id", "cannot be empty or unset"));
                 }
-                query.push_kv("uploadId", &aws_smithy_http::query::fmt_string(&inner_98));
+                query.push_kv("uploadId", &aws_smithy_http::query::fmt_string(&inner_100));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -9129,9 +9261,9 @@ impl UploadPartCopyInput {
                                 };
         let mut request = {
             fn uri_base(_input: &crate::input::UploadPartCopyInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
-                let input_99 = &_input.key;
-                let input_99 = input_99.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("key", "cannot be empty or unset"))?;
-                let key = aws_smithy_http::label::fmt_string(input_99, aws_smithy_http::label::EncodingStrategy::Greedy);
+                let input_101 = &_input.key;
+                let input_101 = input_101.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("key", "cannot be empty or unset"))?;
+                let key = aws_smithy_http::label::fmt_string(input_101, aws_smithy_http::label::EncodingStrategy::Greedy);
                 if key.is_empty() {
                                 return Err(aws_smithy_http::operation::error::BuildError::missing_field("key", "cannot be empty or unset"))
                             }
@@ -9141,14 +9273,14 @@ impl UploadPartCopyInput {
             fn uri_query(_input: &crate::input::UploadPartCopyInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_kv("x-id", "UploadPartCopy");
-                let inner_100 = &_input.part_number;
-                query.push_kv("partNumber", aws_smithy_types::primitive::Encoder::from(*inner_100).encode());
-                let inner_101 = &_input.upload_id;
-                let inner_101 = inner_101.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("upload_id", "cannot be empty or unset"))?;
-                if inner_101.is_empty() {
+                let inner_102 = &_input.part_number;
+                query.push_kv("partNumber", aws_smithy_types::primitive::Encoder::from(*inner_102).encode());
+                let inner_103 = &_input.upload_id;
+                let inner_103 = inner_103.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("upload_id", "cannot be empty or unset"))?;
+                if inner_103.is_empty() {
                     return Err(aws_smithy_http::operation::error::BuildError::missing_field("upload_id", "cannot be empty or unset"));
                 }
-                query.push_kv("uploadId", &aws_smithy_http::query::fmt_string(&inner_101));
+                query.push_kv("uploadId", &aws_smithy_http::query::fmt_string(&inner_103));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
