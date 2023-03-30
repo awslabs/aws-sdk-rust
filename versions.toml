@@ -2098,21 +2098,6 @@ category = 'SmithyRuntime'
 version = '0.55.0'
 source_hash = '9d853c1add99a01dfa368c722dfc720b18f78d58e372c2122a6f810805186298'
 
-[crates.aws-smithy-runtime]
-category = 'SmithyRuntime'
-version = '0.55.0'
-source_hash = '1debc3b8261af840c9498904fef9e77f60561a32a0cb6ab2afd270040aa86607'
-
-[crates.aws-smithy-runtime-api]
-category = 'SmithyRuntime'
-version = '0.55.0'
-source_hash = 'daf383262e1c1473d6b525b26bf262a450823efdca3a7ff75484cd6cfa45fe5a'
-
-[crates.aws-smithy-runtime-test]
-category = 'SmithyRuntime'
-version = '0.1.0'
-source_hash = '79bd19ab3e62297baf772b510b301ca57e6ee40c973c28860feaf0f35f2a0f1e'
-
 [crates.aws-smithy-types]
 category = 'SmithyRuntime'
 version = '0.55.0'
@@ -2489,9 +2474,6 @@ aws-smithy-http-tower = '0.55.0'
 aws-smithy-json = '0.55.0'
 aws-smithy-protocol-test = '0.55.0'
 aws-smithy-query = '0.55.0'
-aws-smithy-runtime = '0.55.0'
-aws-smithy-runtime-api = '0.55.0'
-aws-smithy-runtime-test = '0.1.0'
 aws-smithy-types = '0.55.0'
 aws-smithy-types-convert = '0.55.0'
 aws-smithy-xml = '0.55.0'
