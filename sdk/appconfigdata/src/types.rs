@@ -2,9 +2,9 @@
 pub use aws_http::request_id::RequestId;
 
 pub use aws_smithy_types::Blob;
+pub use aws_smithy_http::result::SdkError;
 pub use aws_smithy_types::error::display::DisplayErrorContext;
 pub use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-pub use aws_smithy_http::result::SdkError;
 
 /// Opaque struct used as inner data for the `Unknown` variant defined in enums in
 /// the crate

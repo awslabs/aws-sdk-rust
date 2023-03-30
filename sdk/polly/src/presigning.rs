@@ -228,7 +228,7 @@ pub mod request {
 /// Tower middleware service for creating presigned requests
 #[allow(dead_code)]
 pub(crate) mod service {
-    use crate::presigning::request::PresignedRequest;
+    use super::request::PresignedRequest;
     use aws_smithy_http::operation;
     use http::header::USER_AGENT;
     use std::future::{ready, Ready};

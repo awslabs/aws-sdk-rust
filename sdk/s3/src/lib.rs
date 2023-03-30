@@ -71,7 +71,7 @@ pub mod output;
 /// Data primitives referenced by other data types.
 pub mod types;
 
-pub mod http_body_checksum;
+pub(crate) mod http_body_checksum;
 
 mod http_serde;
 
