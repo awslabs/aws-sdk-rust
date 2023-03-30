@@ -123,7 +123,7 @@ January 26th, 2023
     After:
     ```rust
     use aws_credential_types::cache::CredentialsCache;
-    use aws_types::provider::ProvideCredentials;
+    use aws_credential_types::provider::ProvideCredentials;
 
     fn make_provider() -> impl ProvideCredentials {
         // --snip--
@@ -168,7 +168,7 @@ January 26th, 2023
     After:
     ```rust
     use aws_credential_types::cache::CredentialsCache;
-    use aws_types::provider::ProvideCredentials;
+    use aws_credential_types::provider::ProvideCredentials;
     use std::time::Duration;
 
     fn make_provider() -> impl ProvideCredentials {
