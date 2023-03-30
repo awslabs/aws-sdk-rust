@@ -106,6 +106,15 @@ impl ProvideCachedCredentials for LazyCredentialsCache {
                                 .buffer_time
                                 .mul_f64((self.buffer_time_jitter_fraction)());
 
+                            // Logging for cache miss should be emitted here as opposed to after the call to
+                            // `cache.get_or_load` above. In the case of multiple threads concurrently executing
+                            // `cache.get_or_load`, logging inside `cache.get_or_load` ensures that it is emitted
+                            // only once for the first thread that succeeds in populating a cache value.
+                            info!(
+                                "credentials cache miss occurred; added new AWS credentials (took {:?})",
+                                start_time.elapsed()
+                            );
+
                             Ok((credentials, expiry + jitter))
                         }
                         // Only instrument the the actual load future so that no span
@@ -113,10 +122,7 @@ impl ProvideCachedCredentials for LazyCredentialsCache {
                         .instrument(span)
                     })
                     .await;
-                info!(
-                    "credentials cache miss occurred; retrieved new AWS credentials (took {:?})",
-                    start_time.elapsed()
-                );
+                debug!("loaded credentials");
                 result
             }
         })
